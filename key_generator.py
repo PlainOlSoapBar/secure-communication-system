@@ -3,6 +3,7 @@ from cryptography.hazmat.primitives import serialization
 
 # Generate RSA key pairs for both the sender and the receiver. These keys will be stored as .pem files.
 
+
 def generate_rsa_key_pair(private_key_file, public_key_file):
     # Generate private and public keys
     private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
@@ -27,6 +28,9 @@ def generate_rsa_key_pair(private_key_file, public_key_file):
             )
         )
 
+
 generate_rsa_key_pair("./keys/sender_private_key.pem", "./keys/sender_public_key.pem")
-generate_rsa_key_pair("./keys/receiver_private_key.pem", "./keys/receiver_public_key.pem")
+generate_rsa_key_pair(
+    "./keys/receiver_private_key.pem", "./keys/receiver_public_key.pem"
+)
 print("RSA key pairs generated for the sender and the receiver.")
