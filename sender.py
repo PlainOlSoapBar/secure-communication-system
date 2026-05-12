@@ -87,5 +87,5 @@ def main():
 
     print("Message encrypted and written to Transmitted_Data.json.")
 
-
-main()
+if __name__ == "__main__":
+    main()

@@ -13,6 +13,7 @@ def generate_rsa_key_pair(private_key_file, public_key_file):
     with open(private_key_file, "wb") as f:
         f.write(
             private_key.private_bytes(
+                # Standard formats for storing private keys
                 encoding=serialization.Encoding.PEM,
                 format=serialization.PrivateFormat.PKCS8,
                 encryption_algorithm=serialization.NoEncryption(),
@@ -28,9 +29,12 @@ def generate_rsa_key_pair(private_key_file, public_key_file):
             )
         )
 
+def main():
+    generate_rsa_key_pair("./keys/sender_private_key.pem", "./keys/sender_public_key.pem")
+    generate_rsa_key_pair(
+        "./keys/receiver_private_key.pem", "./keys/receiver_public_key.pem"
+    )
+    print("RSA key pairs generated for the sender and the receiver.")
 
-generate_rsa_key_pair("./keys/sender_private_key.pem", "./keys/sender_public_key.pem")
-generate_rsa_key_pair(
-    "./keys/receiver_private_key.pem", "./keys/receiver_public_key.pem"
-)
-print("RSA key pairs generated for the sender and the receiver.")
+if __name__ == "__main__":
+    main()

@@ -83,5 +83,5 @@ def main():
     print("Message decrypted successfully.")
     print("Recovered message:", plaintext.decode("utf-8"))
 
-
-main()
+if __name__ == "__main__":
+    main()
