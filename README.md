@@ -23,7 +23,7 @@ pip install -r requirements.txt
 **1. Edit `message.txt` with your desired message**  
 **2. Generate RSA keys for the sender and receiver**  
 ```
-python generate_keys.py
+python key_generator.py
 ```
 **3. Read and encrypt contents from `message.txt` to send to the receiver**  
 ```
